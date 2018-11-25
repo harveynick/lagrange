@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 Gem::Specification.new do |spec|
-  spec.name          = "lagrange"
+  spec.name          = "jekyll-theme-harveynick-lagrange"
   spec.version       = "2.1.0"
   spec.authors       = ["Nick Johnson"]
   spec.email         = ["contact@harveynick.com"]
