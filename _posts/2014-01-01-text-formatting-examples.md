@@ -38,6 +38,12 @@ Sometimes it is useful to have different levels of headings to structure your do
 
 ###### Heading Six (h6)
 
+## Footnotes
+
+You can add footnotes, like this[^1].
+
+[^1]: This is the footnote text.
+
 ## Links
 
 You can create an inline link by wrapping link text in square brackets `[ ]`, and then wrapping the URL in parentheses `( )`. For example, it is very easy to [link to Google!](http://google.com).
