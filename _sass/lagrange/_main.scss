@@ -161,6 +161,13 @@ sup {
   color: #9a9a9a;
   font-family: 'Quattrocento Sans', sans-serif;
   font-size:0.8rem;
+
+  a {
+    color: inherit;
+  }
+  a:hover {
+    color: #333;
+  }
 }
 
 @media (max-width: 30rem) {
@@ -173,13 +180,30 @@ sup {
   padding-bottom: 2rem;
 }
 
-.related-posts {
+.posts-list {
   padding-left: 0px;
   list-style: none;
-}
 
-.related-posts a {
-  text-decoration: none;
+  h3 {
+    margin-top: 0;
+  }
+
+  li {
+    small {
+      font-size: 75%;
+      color: #999;
+      white-space: nowrap;
+    }
+
+    a:hover {
+      //color: $link-color;
+      text-decoration: none;
+
+      small {
+        color: inherit;
+      }
+    }
+  }
 }
 
 /*
