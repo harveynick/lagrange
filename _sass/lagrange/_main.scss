@@ -86,12 +86,12 @@ sup {
 .container {
   margin-left: auto;
   margin-right: auto;
-  width: 615px;
+  width: $content-width;
 }
 
 /*48em*/
 
-@media (max-width: 768px) {
+@media (max-width: $mobile-breakpoint) {
   .container {
     width: 90vw;
   }
