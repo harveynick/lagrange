@@ -8,9 +8,7 @@
     Pagination
     Footer
     Menu
-    Code
     Tables
-    Social media icons
 */
 
 /*
@@ -18,10 +16,10 @@
 */
 
 body {
-  font-family: "PT Serif", Georgia, "Times New Roman", serif;
-  font-size: 18px;
-  color: #515151;
-  line-height: 1.75rem;
+  font-family: $body-font-family;
+  font-size: $body-font-size;
+  color: $body-color;
+  line-height: $body-line-height;
 }
 
 @media (max-width: 30em) {
@@ -43,18 +41,18 @@ h1 a {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Quattrocento Sans", sans-serif;
-  color: #333;
+  font-family: $heading-font-family;
+  color: $heading-color;
   line-height: 1;
 }
 
 a {
   text-decoration: underline;
-  color: #333;
+  color: $link-color;
 }
 
 a:hover {
-  color: black;
+  color: $link-hover-color;
   border-bottom: none;
 }
 
@@ -67,13 +65,13 @@ img {
 blockquote {
   margin: 10px 20px 10px;
   padding: 0px 15px;
-  border-left: 0.25em solid #ccc;
-  color: #999;
+  border-left: 0.25em solid $blockquote-indent-color;
+  color: $blockquote-color;
   line-height: 1.5;
 }
 
 hr {
-  border-top: 1px solid #ccc;
+  border-top: 1px solid $horizontal-rule-color;
 }
 
 sup { 
@@ -107,7 +105,7 @@ sup {
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
   margin-bottom: 4rem;
-  font-family: "Quattrocento Sans", sans-serif;
+  font-family: $heading-font-family;
 }
 
 .masthead a:hover {
@@ -117,11 +115,11 @@ sup {
 .masthead-title a {
   font-size: 2rem;
   text-decoration: none;
-  color: #505050;
+  color: $masthead-title-color;
 }
 
 .masthead-subtitle {
-  color: #999;
+  color: $masthead-subtitle-color;
 }
 
 /*
@@ -158,15 +156,17 @@ sup {
   display: block;
   margin-top:3px;
   margin-bottom: 1rem;
-  color: #9a9a9a;
-  font-family: 'Quattrocento Sans', sans-serif;
+  color: $back-matter-color;
+  font-family: $back-matter-font-family;
   font-size:0.8rem;
 
   a {
     color: inherit;
+    text-decoration: none;
   }
   a:hover {
-    color: #333;
+    color: $back-matter-color-link-hover-color;
+    text-decoration: underline;
   }
 }
 
@@ -191,12 +191,12 @@ sup {
   li {
     small {
       font-size: 75%;
-      color: #999;
+      color: $back-matter-color;
       white-space: nowrap;
     }
 
     a:hover {
-      //color: $link-color;
+      color: $link-hover-color;
       text-decoration: none;
 
       small {
@@ -212,7 +212,7 @@ sup {
 
 .pagination {
   overflow: hidden;
-  font-family: 'Quattrocento Sans', sans-serif;
+  font-family: $pagination-font-family;
   text-align: center;
 }
 
@@ -221,8 +221,8 @@ sup {
 }
 
 .pagination-button {
-  color: #999;
-  border: 1px solid #e0e0e0;
+  color: $pagination-inactive-color;
+  border: 1px solid $pagination-border-color;
   padding: 15px 45px;
   display: inline-block;
   font-size: 16px;
@@ -230,11 +230,11 @@ sup {
 }
 
 .pagination-active {
-  color: black;
+  color: $pagination-active-color;
 }
 
 .pagination-active:hover {
-  background-color: #e0e0e0;
+  background-color: $pagination-hover-background-color;
 }
 
 /*
@@ -242,19 +242,19 @@ sup {
 */
 
 .footer {
-  color: #999;
+  color: $footer-text-color;
   text-align: center;
   margin: 2rem;
 }
 
 .footer a {
-  color: #999;
+  color: $footer-link-color;
   padding: 10px;
   text-decoration: none;
 }
 
 .footer a:hover {
-  color: #333;
+  color: $footer-link-hover-color;
 }
 
 /*
@@ -271,7 +271,7 @@ sup {
 }
 
 .menu-content a {
-  color: #999;
+  color: $menu-text-color;
   font-size: 1rem;
   padding-right: 10px;
 }
@@ -281,7 +281,7 @@ sup {
 }
 
 .social-icons a {
-  color: #999;
+  color: $menu-icon-color;
   font-size: 1rem;
 }
 
@@ -296,71 +296,6 @@ sup {
 }
 
 /*
-  Code
-*/
-
-code,
-pre {
-  font-family: "Source Code Pro", monospace;
-}
-code {
-  padding: .25em .5em;
-  font-size: .8rem;
-  background-color: #f5f5f5;
-  border-radius: 3px;
-}
-pre {
-  display: block;
-  margin-top: 0;
-  margin-bottom: 1rem;
-  padding: 1rem;
-  font-size: .8rem;
-  line-height: 1.4;
-  white-space: pre;
-  white-space: pre-wrap;
-  word-break: break-all;
-  word-wrap: break-word;
-  background-color: #f5f5f5;
-}
-pre code {
-  padding: 0;
-  font-size: 100%;
-  color: inherit;
-  background-color: transparent;
-}
-
-/* Pygments via Jekyll */
-.highlight {
-  margin-bottom: 1rem;
-  border-radius: 4px;
-}
-.highlight pre {
-  margin-bottom: 0;
-}
-
-/* Gist via GitHub Pages */
-.gist .gist-file {
-  font-family: "Source Code Pro", monospace !important;
-}
-.gist .markdown-body {
-  padding: 15px;
-}
-.gist pre {
-  padding: 0;
-  background-color: transparent;
-}
-.gist .gist-file .gist-data {
-  font-size: .8rem !important;
-  line-height: 1.4;
-}
-.gist code {
-  padding: 0;
-  color: inherit;
-  background-color: transparent;
-  border-radius: 0;
-}
-
-/*
   Tables
 */
 
@@ -371,7 +306,7 @@ table {
 }
 
 table, th, td {
-  border: 1px solid black;
+  border: 1px solid $table-border-color;
 }
 
 th, td {
@@ -379,153 +314,4 @@ th, td {
   text-align: left;
 }
 
-/*
-  Social media icons
-*/
 
-.sharing-icons a {
-  padding-right: 10px;
-}
-
-.fa-envelope {
-  padding: 5px;
-	-o-transition:.5s;
-  	-ms-transition:.5s;
-  	-moz-transition:.5s;
-  	-webkit-transition:.5s;
-  	transition: .5s;
-}
-
-.fa-envelope:hover {
-	color: #f39c12;
-}
-
-.fa-twitter {
-  padding: 5px;
-	-o-transition:.5s;
-  	-ms-transition:.5s;
-  	-moz-transition:.5s;
-  	-webkit-transition:.5s;
-  	transition: .5s;
-}
-
-.fa-twitter:hover {
-	color: #00aced;
-}
-
-.fa-instagram {
-  padding: 5px;
-	-o-transition:.5s;
-  	-ms-transition:.5s;
-  	-moz-transition:.5s;
-  	-webkit-transition:.5s;
-  	transition: .5s;
-}
-
-.fa-instagram:hover {
-	color: #375989;
-}
-
-.fa-github {
-  padding: 5px;
-	-o-transition:.5s;
-  	-ms-transition:.5s;
-  	-moz-transition:.5s;
-  	-webkit-transition:.5s;
-  	transition: .5s;
-}
-
-.fa-github:hover {
-	color: #343434;
-}
-
-.fa-linkedin {
-  padding: 5px;
-	-o-transition:.5s;
-  	-ms-transition:.5s;
-  	-moz-transition:.5s;
-  	-webkit-transition:.5s;
-  	transition: .5s;
-}
-
-.fa-linkedin:hover {
-	color: #0073a4;
-}
-
-.fa-facebook {
-  padding: 5px;
-	-o-transition:.5s;
-  	-ms-transition:.5s;
-  	-moz-transition:.5s;
-  	-webkit-transition:.5s;
-  	transition: .5s;
-}
-
-.fa-facebook:hover {
-	color: #3d5b99;
-}
-
-.fa-google-plus {
-  padding: 5px;
-	-o-transition:.5s;
-  	-ms-transition:.5s;
-  	-moz-transition:.5s;
-  	-webkit-transition:.5s;
-  	transition: .5s;
-}
-
-.fa-google-plus:hover {
-	color: #e64a41;
-}
-
-.fa-pinterest {
-  padding: 5px;
-	-o-transition:.5s;
-  	-ms-transition:.5s;
-  	-moz-transition:.5s;
-  	-webkit-transition:.5s;
-  	transition: .5s;
-}
-
-.fa-pinterest:hover {
-	color: #bd081c;
-}
-
-.fa-medium {
-  padding: 5px;
-	-o-transition:.5s;
-  	-ms-transition:.5s;
-  	-moz-transition:.5s;
-  	-webkit-transition:.5s;
-  	transition: .5s;
-}
-
-.fa-medium:hover {
-	color: #00AB6C;
-}
-
-.fa-codepen {
-  padding: 5px;
-	-o-transition:.5s;
-  	-ms-transition:.5s;
-  	-moz-transition:.5s;
-  	-webkit-transition:.5s;
-  	transition: .5s;
-}
-
-.fa-codepen:hover {
-	color: black;
-}
-
-.fa-rss-square {
-  padding: 5px;
-	-o-transition:.5s;
-  	-ms-transition:.5s;
-  	-moz-transition:.5s;
-  	-webkit-transition:.5s;
-  	transition: .5s;
-}
-
-.fa-rss-square:hover {
-	color: #ff6600;
-}
