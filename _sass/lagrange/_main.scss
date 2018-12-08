@@ -72,6 +72,9 @@ blockquote {
 
 hr {
   border-top: 1px solid $horizontal-rule-color;
+  border-left: none;
+  border-right: none;
+  border-bottom: none;
 }
 
 sup { 
