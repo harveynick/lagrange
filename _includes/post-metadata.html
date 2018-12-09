@@ -41,18 +41,26 @@
   {% assign posts = posts | uniq %}
 {% else if site.data.settings.related_posts.type == 'site' %}
   {% assign posts = site.related_posts %}
+{% else if site.data.settings.related_posts.type == 'all' %}
+  {% assign posts = site.posts %}
 {% endif %}
 
-{% assign posts = posts | sample: posts.size %}
-
-{% assign related_posts = '' | split: ',' %}
-{% assign count = 0 %}
+{% assign temp = '' | split: ',' %}
 {% for post in posts %}
   {% unless used_posts contains post.url %}
-    {% assign count = count | plus: 1 %}
-    {% assign related_posts = related_posts | push: post %}
+    {% assign temp = temp | push: post %}
   {% endunless %}
-  {% if count >= site.data.settings.related_posts.count %}
-    {% break %}
-  {% endif %}
 {% endfor %}
+{% assign posts = temp %}
+
+{% if site.data.settings.related_posts.post_filter %}
+  {% assign temp = '' | split: ',' %}
+  {% for post in posts %}
+    {% if post[site.data.settings.related_posts.post_filter] %}
+      {% assign temp = temp | push: post %}
+    {% endif %}
+  {% endfor %}
+  {% assign posts = temp %}
+{% endif %}
+
+{% assign related_posts = posts | sample: site.data.settings.related_posts.count %}
