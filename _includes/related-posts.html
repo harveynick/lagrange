@@ -1,18 +1,13 @@
-{% assign posts = '' | split: ',' %}
-{% for tag in page.tags %}
-  {% assign posts = site.tags[tag] | concat: posts %}
-{% endfor %}
-{% assign posts = posts | uniq | sample: 4 %}
+{% comment %}
+Variables used are generated in post-metadata.html, included via
+_layous/post.html.
+{% endcomment %}
 
-<div class="related">
-  <h2 >{{ site.data.settings.related_posts }}</h2>
-  <ul class="posts-list">
-    
-    {% assign count = 0 %}
-
-    {% for related_post in posts %}
-      {% unless related_post.url == page.url %}
-        {% assign count = count | plus: 1 %}
+{% if related_posts.size > 0 %}
+  <div class="related">
+    <h2 class="posts-list-header">{{ site.data.settings.related_posts.heading }}</h2>
+    <ul class="posts-list">
+      {% for related_post in related_posts %}
         <li>
           <h3>
             <a href="{{ related_post.url }}">
@@ -21,11 +16,7 @@
             </a>
           </h3>
         </li>
-      {% endunless %}
-
-      {% if count >= 3 %}
-        {% break %}
-      {% endif %}
-    {% endfor %}
-  </ul>
-</div>
+      {% endfor %}
+    </ul>
+  </div>
+{% endif %}

@@ -1,0 +1,23 @@
+{% comment %}
+Variables used are generated in post-metadata.html, included via
+_layous/post.html.
+{% endcomment %}
+
+{% if previous_post or next_post %}
+  <nav class="category-navigation">
+    {% if previous_post %}
+      <div class="category-navigation-prev">
+        <a href="{{ previous_post.url }}">
+          {{ previous_post.title }}
+        </a>
+      </div>
+    {% endif %}
+    {% if next_post %}
+      <div class="category-navigation-next">
+        <a href="{{ next_post.url }}">
+          {{ next_post.title }}
+        </a>
+      </div>
+    {% endif %}
+  </nav>
+{% endif %}

@@ -10,6 +10,12 @@ layout: default
   <img src="{{ page.image }}">
 {% endif %}
 
+{% include post-metadata.html %}
+
+{% if site.data.settings.post_navigation.postion contains 'top' %}
+  {% include post-navigation.html %}
+{% endif %}
+
 {{ content }}
 
 <footer>
@@ -31,10 +37,14 @@ layout: default
   {% endif %}
 
   {% include post-tags.html %}
-  
+
 </span>
 
 {% include social-sharing.html %}
+
+{% if site.data.settings.post_navigation.postion contains 'bottom' %}
+  {% include post-navigation.html %}
+{% endif %}
 
 {% include related-posts.html %}
 

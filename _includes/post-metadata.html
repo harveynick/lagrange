@@ -1,0 +1,58 @@
+{% assign previous_post = nil %}
+{% assign next_post = nil %}
+
+{% if site.data.settings.post_navigation.type == 'category' %}
+  {% for category in page.categories limit: 1 %}
+    {% assign category_posts = site.categories[category] %}
+    {% for category_post in site.categories[category] | sort "date" %}
+      {% if category_post.url == page.url %}
+        {% unless forloop.first %}
+          {% assign previous_index = forloop.index | minus: 2 %}
+          {% assign previous_post = category_posts[previous_index] %}
+        {% endunless %}
+        {% unless forloop.last %}
+          {% assign next_index = forloop.index %}
+          {% assign next_post = category_posts[next_index] %}
+        {% endunless %}
+        {% break %}
+      {% endif %}
+    {% endfor %}
+  {% endfor %}
+{% else if site.data.settings.post_navigation.type == 'site' %}
+  {% assign previous_post = page.previous %}
+  {% assign next_post = page.next %}
+{% endif %}
+
+
+{% assign used_posts = page.url | split: ',' %}
+{% if previous_post and site.data.settings.related_posts.exclude_post_navigation %}
+  {% assign used_posts = used_posts | push: previous_post.url %}
+{% endif %}
+{% if next_post and site.data.settings.related_posts.exclude_post_navigation %}
+  {% assign used_posts = used_posts | push: next_post.url %}
+{% endif %}
+
+
+{% if site.data.settings.related_posts.type == 'tags' %}
+  {% assign posts = '' | split: ',' %}
+  {% for tag in page.tags %}
+    {% assign posts = site.tags[tag] | concat: posts %}
+  {% endfor %}
+  {% assign posts = posts | uniq %}
+{% else if site.data.settings.related_posts.type == 'site' %}
+  {% assign posts = site.related_posts %}
+{% endif %}
+
+{% assign posts = posts | sample: posts.size %}
+
+{% assign related_posts = '' | split: ',' %}
+{% assign count = 0 %}
+{% for post in posts %}
+  {% unless used_posts contains post.url %}
+    {% assign count = count | plus: 1 %}
+    {% assign related_posts = related_posts | push: post %}
+  {% endunless %}
+  {% if count >= site.data.settings.related_posts.count %}
+    {% break %}
+  {% endif %}
+{% endfor %}

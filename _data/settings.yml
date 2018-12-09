@@ -27,10 +27,30 @@ pagination:
   next_page: 'Newer'
   previous_page: 'Older'
 
+# Text prefix for tags at the bottom of each post.
 post_tags: 'Tagged with'
+
+post_date_prefix: 'Written on'
 
 sharing_button_prompt: 'Feel free to share!'
 
-related_posts: 'You may also enjoy:'
+post_navigation:
+  # Options are 'category', and 'site'. 'category' will only used the first
+  # category assigned to the post.
+  type: category
+  # Available positions are 'top', and 'bottom'.
+  postion: ['top', 'bottom']
 
-post_date_prefix: 'Written on'
+related_posts:
+  # Text for heading above related posts.
+  heading: 'You may also enjoy:'
+  # Method used to generate related posts. Options are 'tags', and 'site'.
+  # 'tags' - Related posts are randomly selected from those with shared tags.
+  # 'site' - Related posts are randomly selected from the contents of
+  #          `site.related_posts`.
+  type: site
+  # Maximum number of related posts to show below each post.
+  count: 3
+  # Whether the content of the post_navigation should be excluded from the
+  # related posts.
+  exclude_post_navigation: true
