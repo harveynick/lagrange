@@ -6,17 +6,10 @@ _layous/post.html.
 {% if related_posts.size > 0 %}
   <div class="related">
     <h2 class="posts-list-header">{{ site.data.settings.related_posts.heading }}</h2>
-    <ul class="posts-list">
+    <div class="posts-list">
       {% for related_post in related_posts %}
-        <li>
-          <h3>
-            <a href="{{ related_post.url }}">
-              {{ related_post.title }}
-              <small>{{ related_post.date | date_to_string }}</small>
-            </a>
-          </h3>
-        </li>
+        {% include post-list-entry.html post=related_post %}
       {% endfor %}
-    </ul>
+    </div>
   </div>
 {% endif %}
