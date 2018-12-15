@@ -23,7 +23,7 @@ body {
   background-color: $background-color;
 }
 
-@media (max-width: 30em) {
+@media (max-width: $rescale-content-mobile-breakpoint) {
   body {
     font-size: 14px;
     line-height: 1.5rem;
@@ -96,7 +96,7 @@ sup {
 
 /*48em*/
 
-@media (max-width: $mobile-breakpoint) {
+@media (max-width: $fill-width-mobile-breakpoint) {
   .container {
     width: 90vw;
   }
@@ -175,7 +175,7 @@ sup {
   }
 }
 
-@media (max-width: 30rem) {
+@media (max-width: $rescale-content-mobile-breakpoint) {
   .posts h1 {
     font-size: 1.5rem;
   }
@@ -253,7 +253,7 @@ sup {
   }
 }
 
-@media (max-width: 20em) {
+@media (max-width: $relayout-in-page-nav-mobile-breakpoint) {
   .category-navigation {
     flex-direction: column;
   }
@@ -352,7 +352,7 @@ sup {
   font-size: 1rem;
 }
 
-@media (max-width: 30em) {
+@media (max-width: $rescale-content-mobile-breakpoint) {
   .social-icons {
     float: left;
     padding-top: 0px;

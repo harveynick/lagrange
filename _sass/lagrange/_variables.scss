@@ -68,4 +68,6 @@ $body-font-size: 18px !default;
 $body-line-height: 1.75rem !default;
 
 $content-width: 615px !default;
-$mobile-breakpoint: 768px !default;
+$fill-width-mobile-breakpoint: 768px !default;
+$rescale-content-mobile-breakpoint: 30em !default;
+$relayout-in-page-nav-mobile-breakpoint: 30em !default;
