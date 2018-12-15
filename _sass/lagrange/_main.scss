@@ -20,6 +20,7 @@ body {
   font-size: $body-font-size;
   color: $body-color;
   line-height: $body-line-height;
+  background-color: $background-color;
 }
 
 @media (max-width: 30em) {
