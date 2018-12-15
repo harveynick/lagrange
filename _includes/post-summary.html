@@ -9,6 +9,6 @@
   {% endif %}
   <p>
     {% include excerpt.html post=post %} <a href="{{ include.post.url }}">Read more</a>
-    <span class="post-date"><i class="fa fa-calendar" aria-hidden="true"></i> {{ include.post.date | date_to_string }} / <i class="fa fa-clock-o" aria-hidden="true"></i> {% include read-time.html post=post %} {% include post-tags.html short=true page=post %}</span>
+    {% include post-summary-metadata.html post=post %}
   </p>
 </article>
