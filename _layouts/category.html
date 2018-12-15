@@ -10,6 +10,18 @@ layout: page
 <div class="posts-list">
   {% assign category = page.category | default: page.title %}
   {% for post in site.categories[category] %}
+    {% if page.tags %}
+      {% assign matched = false %}
+      {% for tag in post.tags %}
+        {% if page.tags contains tag %}
+          {% assign matched = true %}
+          {% break %}
+        {% endif %}
+      {% endfor %}
+      {% unless matched %}
+        {% continue %}
+      {% endunless %}
+    {% endif %}
     {% include post-list-entry.html post=post %}
   {% endfor %}
 </div>
