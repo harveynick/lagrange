@@ -36,7 +36,7 @@ layout: page
       <h1>{{ tag }}</h1>
       <div class="posts-list">
         {% for post in site.tags[tag] %}
-	      {% include post-list-entry.html post=post %}
+	        {% include post-list-entry.html post=post %}
         {% endfor %}
       </div>
     </div>
