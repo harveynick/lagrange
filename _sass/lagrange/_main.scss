@@ -19,7 +19,7 @@ body {
   font-family: $body-font-family;
   font-size: $body-font-size;
   color: $body-color;
-  line-height: $line-height;
+  line-height: $body-line-height;
   background-color: $background-color;
 }
 
@@ -44,7 +44,7 @@ h1 a {
 h1, h2, h3, h4, h5, h6 {
   font-family: $heading-font-family;
   color: $heading-color;
-  line-height: $line-height;
+  line-height: $heading-line-height;
 }
 
 a {
@@ -69,7 +69,7 @@ blockquote {
   padding: 0px 15px;
   border-left: 0.25em solid $blockquote-indent-color;
   color: $blockquote-color;
-  line-height: 1.5;
+  line-height: $body-line-height;
 }
 
 hr {
@@ -271,7 +271,7 @@ sup {
   border-top: 1px solid $horizontal-rule-color;
   font-size: 0.8rem;
   margin-bottom: 24px;
-  line-height: $line-height;
+  line-height: $body-line-height;
 }
 
 /*
