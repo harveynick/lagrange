@@ -1,5 +1,16 @@
 # Lagrange
 
+This is mixed forking of [Lagrange by Paul Le](https://github.com/LeNPaul/Lagrange) and [Hydeout by Andrew Fong](https://github.com/fongandrew/hydeout). It retains the style of the original Lagrange, but adds new layouts and functionality from Hydeout. Additionally, it has further changes to make it compatible with github pages remote theming, and further enhance its customisability. These changes have mostly been made in order to suit the (present and future) needs of [harveynick.com](harveynick.com) and [oicheryl.com](oicheryl.com).
+
+To use it via github pages:
+
+- Add `remote_theme: harveynick/lagrange` to your `_config.yml`;
+- Add `_data/settings.yaml` to your site. I recomend cloning that file from this reposity and updating it to match your site.
+
+Below is the original README from Langrange. Please also see the [Hydeout README](https://github.com/fongandrew/hydeout/blob/master/README.md) for details of the additional layouts and customizations which are available. The combination of these two READMEs covers the majority of the options which are available. Others can be found be reading `_data/settings.yaml`. At some point I'll get around to writing a more complete README for this theme.
+
+
+
 Lagrange is a minimalist Jekyll theme for running a personal blog or site for free through [Github Pages](https://pages.github.com/), or on your own server. Everything that you will ever need to know about this Jekyll theme is included in the README below, which you can also find in [the demo site](https://lenpaul.github.io/Lagrange/).
 
 ![alt text](https://user-images.githubusercontent.com/8409329/32631384-17107870-c56e-11e7-932f-deeb7c12e4db.png "Lagrange Demo Image")
