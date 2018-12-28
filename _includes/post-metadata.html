@@ -1,9 +1,11 @@
 {% assign previous_post = nil %}
 {% assign next_post = nil %}
+{% assign navigation_category = site.title %}
 
 {% if site.data.settings.post_navigation.type == 'category' %}
   {% for category in page.categories limit: 1 %}
     {% assign category_posts = site.categories[category] %}
+    {% assign navigation_category = category %}
     {% for category_post in site.categories[category] | sort "date" %}
       {% if category_post.url == page.url %}
         {% unless forloop.first %}

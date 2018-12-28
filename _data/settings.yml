@@ -36,12 +36,20 @@ post_date_prefix: 'Written on'
 sharing_button_prompt: 'Feel free to share!'
 
 post_navigation:
-  # Options are 'category', and 'site'. 'category' will only used the first
+  # Options are 'category', and 'site'. 'category' will only use the first
   # category assigned to the post.
   type: category
 
   # Available positions are 'top', and 'bottom'.
   postion: ['top', 'bottom']
+
+  # Text to use for the previous post link. `{category}` and `{title}` will be
+  # replaced as expected. If `type` is `site` {category} with be `site.title`.
+  previous_title: 'Previous in "{category}": {title}'
+
+  # Text to use for the next post link. `{category}` and `{title}` will be
+  # replaced as expected. If `type` is `site` {category} with be `site.title`.
+  next_title: 'Next in "{category}": {title}'
 
 related_posts:
   # Text for heading above related posts.
@@ -59,7 +67,7 @@ related_posts:
 
   # Maximum number of related posts to show below each post.
   count: 3
-  
+
   # Whether the content of the post_navigation should be excluded from the
   # related posts.
   exclude_post_navigation: true

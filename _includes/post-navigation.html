@@ -6,16 +6,24 @@ _layous/post.html.
 {% if previous_post or next_post %}
   <nav class="category-navigation">
     {% if previous_post %}
+      {% assign title = site.data.settings.post_navigation.previous_title %}
+      {% assign title = title | replace: "{title}", previous_post.title %}
+      {% assign title = title | replace: "{category}", navigation_category %}
+
       <div class="category-navigation-prev">
         <a href="{{ previous_post.url }}">
-          {{ previous_post.title }}
+          {{ title }}
         </a>
       </div>
     {% endif %}
     {% if next_post %}
+      {% assign title = site.data.settings.post_navigation.next_title %}
+      {% assign title = title | replace: "{title}", next_post.title %}
+      {% assign title = title | replace: "{category}", navigation_category %}
+
       <div class="category-navigation-next">
         <a href="{{ next_post.url }}">
-          {{ next_post.title }}
+          {{ title }}
         </a>
       </div>
     {% endif %}
