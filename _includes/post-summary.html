@@ -2,7 +2,11 @@
   <h1>
     <a href="{{ include.post.url }}">{{ include.post.title }}</a>
   </h1>
-  {% if include.post.image %}
+  {% if include.post.feature_image %}
+  <div class="thumbnail-container">
+    <a href="{{ include.post.url }}"><img src="{{ include.post.feature_image }}"></a>
+  </div>
+  {% elsif include.post.image %}
   <div class="thumbnail-container">
     <a href="{{ include.post.url }}"><img src="{{ include.post.image }}"></a>
   </div>
