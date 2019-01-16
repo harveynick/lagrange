@@ -35,6 +35,8 @@ post_date_prefix: 'Written on'
 
 sharing_button_prompt: 'Feel free to share!'
 
+hacker_news_prompt: 'Discuss this post on Hacker News'
+
 post_navigation:
   # Options are 'category', and 'site'. 'category' will only use the first
   # category assigned to the post.
@@ -52,6 +54,9 @@ post_navigation:
   next_title: 'Next in "{category}": {title}'
 
 related_posts:
+
+  category_toc_heading: 'All posts from "{category}"'
+
   # Text for heading above related posts.
   heading: 'You may also enjoy:'
 

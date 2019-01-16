@@ -8,11 +8,11 @@
 
 .fa-envelope {
   padding: 5px;
-	-o-transition:.5s;
-  	-ms-transition:.5s;
-  	-moz-transition:.5s;
-  	-webkit-transition:.5s;
-  	transition: .5s;
+	-o-transition:.35s ease;
+  	-ms-transition:.35s ease;
+  	-moz-transition:.35s ease;
+  	-webkit-transition:.35s ease;
+  	transition: .35s ease;
 }
 
 .fa-envelope:hover {
@@ -21,11 +21,11 @@
 
 .fa-twitter {
   padding: 5px;
-	-o-transition:.5s;
-  	-ms-transition:.5s;
-  	-moz-transition:.5s;
-  	-webkit-transition:.5s;
-  	transition: .5s;
+	-o-transition:.35s ease;
+  	-ms-transition:.35s ease;
+  	-moz-transition:.35s ease;
+  	-webkit-transition:.35s ease;
+  	transition: .35s ease;
 }
 
 .fa-twitter:hover {
@@ -34,11 +34,11 @@
 
 .fa-instagram {
   padding: 5px;
-	-o-transition:.5s;
-  	-ms-transition:.5s;
-  	-moz-transition:.5s;
-  	-webkit-transition:.5s;
-  	transition: .5s;
+	-o-transition:.35s ease;
+  	-ms-transition:.35s ease;
+  	-moz-transition:.35s ease;
+  	-webkit-transition:.35s ease;
+  	transition: .35s ease;
 }
 
 .fa-instagram:hover {
@@ -47,11 +47,11 @@
 
 .fa-github {
   padding: 5px;
-	-o-transition:.5s;
-  	-ms-transition:.5s;
-  	-moz-transition:.5s;
-  	-webkit-transition:.5s;
-  	transition: .5s;
+	-o-transition:.35s ease;
+  	-ms-transition:.35s ease;
+  	-moz-transition:.35s ease;
+  	-webkit-transition:.35s ease;
+  	transition: .35s ease;
 }
 
 .fa-github:hover {
@@ -60,11 +60,11 @@
 
 .fa-linkedin {
   padding: 5px;
-	-o-transition:.5s;
-  	-ms-transition:.5s;
-  	-moz-transition:.5s;
-  	-webkit-transition:.5s;
-  	transition: .5s;
+	-o-transition:.35s ease;
+  	-ms-transition:.35s ease;
+  	-moz-transition:.35s ease;
+  	-webkit-transition:.35s ease;
+  	transition: .35s ease;
 }
 
 .fa-linkedin:hover {
@@ -73,11 +73,11 @@
 
 .fa-facebook {
   padding: 5px;
-	-o-transition:.5s;
-  	-ms-transition:.5s;
-  	-moz-transition:.5s;
-  	-webkit-transition:.5s;
-  	transition: .5s;
+	-o-transition:.35s ease;
+  	-ms-transition:.35s ease;
+  	-moz-transition:.35s ease;
+  	-webkit-transition:.35s ease;
+  	transition: .35s ease;
 }
 
 .fa-facebook:hover {
@@ -86,11 +86,11 @@
 
 .fa-google-plus {
   padding: 5px;
-	-o-transition:.5s;
-  	-ms-transition:.5s;
-  	-moz-transition:.5s;
-  	-webkit-transition:.5s;
-  	transition: .5s;
+	-o-transition:.35s ease;
+  	-ms-transition:.35s ease;
+  	-moz-transition:.35s ease;
+  	-webkit-transition:.35s ease;
+  	transition: .35s ease;
 }
 
 .fa-google-plus:hover {
@@ -99,11 +99,11 @@
 
 .fa-pinterest {
   padding: 5px;
-	-o-transition:.5s;
-  	-ms-transition:.5s;
-  	-moz-transition:.5s;
-  	-webkit-transition:.5s;
-  	transition: .5s;
+	-o-transition:.35s ease;
+  	-ms-transition:.35s ease;
+  	-moz-transition:.35s ease;
+  	-webkit-transition:.35s ease;
+  	transition: .35s ease;
 }
 
 .fa-pinterest:hover {
@@ -112,11 +112,11 @@
 
 .fa-medium {
   padding: 5px;
-	-o-transition:.5s;
-  	-ms-transition:.5s;
-  	-moz-transition:.5s;
-  	-webkit-transition:.5s;
-  	transition: .5s;
+	-o-transition:.35s ease ;
+  	-ms-transition:.35s ease;
+  	-moz-transition:.35s ease;
+  	-webkit-transition:.35s ease;
+  	transition: .35s ease;
 }
 
 .fa-medium:hover {
@@ -125,11 +125,11 @@
 
 .fa-codepen {
   padding: 5px;
-	-o-transition:.5s;
-  	-ms-transition:.5s;
-  	-moz-transition:.5s;
-  	-webkit-transition:.5s;
-  	transition: .5s;
+	-o-transition:.35s ease;
+  	-ms-transition:.35s ease;
+  	-moz-transition:.35s ease;
+  	-webkit-transition:.35s ease;
+  	transition: .35s ease;
 }
 
 .fa-codepen:hover {
@@ -138,13 +138,17 @@
 
 .fa-rss-square {
   padding: 5px;
-	-o-transition:.5s;
-  	-ms-transition:.5s;
-  	-moz-transition:.5s;
-  	-webkit-transition:.5s;
-  	transition: .5s;
+	-o-transition:.35s ease;
+  	-ms-transition:.35s ease;
+  	-moz-transition:.35s ease;
+  	-webkit-transition:.35s ease;
+  	transition: .35s ease;
 }
 
 .fa-rss-square:hover {
 	color: $icon-rss-hover;
+}
+
+.fa-hackernews:hover {
+  color: $icon-hackernews-hover;
 }

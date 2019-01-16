@@ -1,32 +1,56 @@
 {% assign previous_post = nil %}
 {% assign next_post = nil %}
-{% assign navigation_category = site.title %}
+{% assign navigation_category = nil %}
+{% assign navigation_category_page = nil %}
 
 {% if site.data.settings.post_navigation.type == 'category' %}
-  {% for category in page.categories limit: 1 %}
+
+  {% for category in include.page.categories limit: 1 %}
+
     {% assign category_posts = site.categories[category] %}
     {% assign navigation_category = category %}
-    {% for category_post in site.categories[category] | sort "date" %}
-      {% if category_post.url == page.url %}
+    {% assign sorted_category_posts = site.categories[category] | sort "date" %}
+    {% for category_post in sorted_category_posts %}
+      {% if category_post.url == include.page.url %}
         {% unless forloop.first %}
           {% assign previous_index = forloop.index | minus: 2 %}
-          {% assign previous_post = category_posts[previous_index] %}
+          {% assign previous_post = sorted_category_posts[previous_index] %}
         {% endunless %}
         {% unless forloop.last %}
           {% assign next_index = forloop.index %}
-          {% assign next_post = category_posts[next_index] %}
+          {% assign next_post = sorted_category_posts[next_index] %}
         {% endunless %}
         {% break %}
       {% endif %}
     {% endfor %}
+    
+    {% for site_page in site.pages %}
+      {% unless site_page.layout == 'category' %}
+        {% continue %}
+      {% endunless %}
+      {% if site_page.category %}
+        {% if site_page.category == category %}
+          {% assign navigation_category_page = site_page %}
+          {% break %}
+        {% else %}
+          {% continue %}
+        {% endif %}
+      {% endif %}
+      {% if site_page.title == category %}
+        {% assign navigation_category_page = site_page %}
+        {% break %}
+      {% endif %}
+    {% endfor %}
+
   {% endfor %}
+
 {% else if site.data.settings.post_navigation.type == 'site' %}
-  {% assign previous_post = page.previous %}
-  {% assign next_post = page.next %}
+  {% assign previous_post = include.page.previous %}
+  {% assign next_post = include.page.next %}
 {% endif %}
 
 
-{% assign used_posts = page.url | split: ',' %}
+{% assign used_posts = include.page.url | split: ',' %}
 {% if previous_post and site.data.settings.related_posts.exclude_post_navigation %}
   {% assign used_posts = used_posts | push: previous_post.url %}
 {% endif %}
@@ -37,7 +61,7 @@
 
 {% if site.data.settings.related_posts.type == 'tags' %}
   {% assign posts = '' | split: ',' %}
-  {% for tag in page.tags %}
+  {% for tag in include.page.tags %}
     {% assign posts = site.tags[tag] | concat: posts %}
   {% endfor %}
   {% assign posts = posts | uniq %}

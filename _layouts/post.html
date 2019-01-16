@@ -2,6 +2,12 @@
 layout: default
 ---
 
+{% include post-metadata.html page=page %}
+
+{% for category in page.categories limit: 1 %}
+  <span class="post-date post-category">{{navigation_category_page.title | default: navigation_category}}:</span>
+{% endfor %}
+
 <h1>
   {{ page.title }}
 </h1>
@@ -10,13 +16,15 @@ layout: default
   <img src="{{ page.image }}">
 {% endif %}
 
-{% include post-metadata.html %}
-
 {% if site.data.settings.post_navigation.postion contains 'top' %}
   {% include post-navigation.html %}
 {% endif %}
 
 {{ content }}
+
+{% if page.hacker_news %}
+  <p><a href="{{ page.hacker_news }}" class="fa-hackernews">{{ site.data.settings.hacker_news_prompt }}</a></p>
+{% endif %}
 
 <footer>
 <span class="post-date">
