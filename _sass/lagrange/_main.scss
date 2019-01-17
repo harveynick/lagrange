@@ -223,12 +223,12 @@ sup {
     .post-list-index {
       /*color: $back-matter-color;*/
     }
-    .small {
-      font-size: 75%;
-      color: $back-matter-color;
-      white-space: nowrap;
-      transition: color .35s ease;
-    }
+  }
+  .small {
+    font-size: 75%;
+    color: $back-matter-color;
+    white-space: nowrap;
+    transition: color .35s ease;
   }
   
   a:hover {
